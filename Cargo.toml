@@ -1,0 +1,26 @@
+[package]
+name = "rust-warp-jwt"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+jsonwebtoken = "8"  # Updated for better JWT support
+tokio = { version = "1", features = ["full"] }  # Updated for compatibility
+warp = "0.3"  # Updated for latest stable version
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+chrono = "0.4"
+bcrypt = "0.15"
+sqlx = { version = "0.7", features = ["runtime-tokio", "postgres", "macros", "uuid"] }
+uuid = { version = "1", features = ["serde", "v4"] }
+dotenv = "0.15"
+
+[profile.dev]
+debug = 0
+
+[profile.test]
+debug = 0
+
+[profile.release]
+panic = 'abort'
